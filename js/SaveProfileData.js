@@ -1,5 +1,4 @@
 const key = 'M67we6gIa1xIqHCmj5PZGs8YaWPNcIkQ'
-let temp = `{"name": "Alex", "age": 129, "exp": 1992192, "inventory": {"1": "Sword"}}`
 
 const cipher = salt => {
     const textToChars = text => text.split('').map(c => c.charCodeAt(0));
