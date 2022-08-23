@@ -1,9 +1,7 @@
-html,
-body {
+html, body {
     background: url("/assets/background_images/SignInBackground.jpeg") no-repeat center center fixed;
     background-size: cover;
 }
-
 .divided_line {
     background-color: black;
     width: 100;
@@ -12,18 +10,15 @@ body {
     margin-bottom: 30px;
 
 }
-
 .sing_in_box {
     padding: 30px;
     background-color: rgb(255, 255, 255);
     box-shadow: 27px 32px 64px -6px rgba(0, 0, 0, 1);
     border: 1px solid #000000;
 }
-
 .public_shadow {
     box-shadow: 17px 27px 47px -15px rgba(0, 0, 0, 1);
 }
-
-a {
+.a_reg {
     text-decoration: none;
 }
