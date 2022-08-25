@@ -1,0 +1,4 @@
+html, body {
+    background: url("/assets/background_images/SignInBackground.jpeg") no-repeat center center fixed;
+    background-size: cover;
+}
