@@ -1,0 +1,27 @@
+html, body {
+    background: url("/assets/background_images/MainBackground.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Acme', sans-serif;
+    overflow: hidden;
+}
+.header_div {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 25px 22px 51px -13px rgba(0, 0, 0, 0.75);
+    background-color: #b78200;
+    background-image: linear-gradient(180deg, #b78200 0%, #331d00 100%);
+}
+.image_div {
+    box-shadow: 25px 22px 51px -13px rgba(0, 0, 0, 0.75);
+    background-color: #b78200;
+    background-image: linear-gradient(180deg, #b78200 0%, #331d00 100%);
+    border-radius: 15px;
+    height: 150px;
+}
+.image_size_menu {
+    width: 100px;
+    height: 100px;
+}
+.block_menu {
+    max-width: 250px;
+}
