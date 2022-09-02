@@ -18,6 +18,9 @@ html, body {
     border-radius: 15px;
     height: 150px;
 }
+.image_div:hover {
+    cursor: pointer;
+}
 .image_size_menu {
     width: 100px;
     height: 100px;

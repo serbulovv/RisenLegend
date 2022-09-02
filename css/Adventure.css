@@ -1,0 +1,12 @@
+html, body {
+    background: url("/assets/background_images/MainBackground.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Acme', sans-serif;
+}
+.image_div {
+    box-shadow: 25px 22px 51px -13px rgba(0, 0, 0, 0.75);
+    height: 175px;
+}
+.block_menu {
+    max-width: 300px;
+}
