@@ -1,0 +1,33 @@
+{
+    "unit_data": 
+    [
+        {
+            "uid": "unit_1",
+            "unit_level": 1,
+            "name": "Black child crow",
+            "heal_point": 50,
+            "phisical_damage": 7,
+            "class": "Animal",
+            "splash_url": "/assets/units_assets/crown_child_unit.png"
+        },
+        {
+            "uid": "unit_2",
+            "unit_level": 1,
+            "name": "Wolf child",
+            "heal_point": 75,
+            "phisical_damage": 7,
+            "class": "Animal",
+            "splash_url": "/assets/units_assets/wolf_unit.png"
+        },
+        {
+            "uid": "unit_3",
+            "unit_level": 1,
+            "name": "Rogue of the forest",
+            "heal_point": 200,
+            "phisical_damage": 10,
+            "class": "Human",
+            "splash_url": "/assets/units_assets/rogue_unit.png"
+        }    
+    ]
+    
+}

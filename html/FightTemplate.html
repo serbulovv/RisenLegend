@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/Fight_Area.css">
+    <title>Fight</title>
+</head>
+<body>
+    <div class="container">
+        <div id="main_block" class="row align-items-center">
+            <div id="hero" class="col m-5 general_block_info">
+                <div id="user_info" class="row status_block_info">
+                    <h5 id="user_name" style="color:white" class="h-25 d-inline-block"> <span class="badge text-bg-info">Hero</span></h5>
+                    <div class="progress p-0">
+                        <div id="user_heal_point" class="progress-bar progress-bar-striped progress-bar-animated bg-danger p-0" role="progressbar" aria-label="Danger example" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">70%</div>
+                    </div>
+                </div>
+                <div id="user_sprite" class="row sprite_block_info">
+                    <img id='user_asset' src="/assets/units_assets/user_unit.png" class="mt-5 unit_image">
+                </div>
+            </div>
+            <div id="unit" class="col m-5 general_block_info">
+                <div id="unit_info" class="row status_block_info">
+                    <h5 id="unit_name" style="color:white" class="h-25 d-inline-block"> <span class="badge text-bg-info"></span> <span class="badge text-bg-success">Count 1</span></h5>
+                    <div class="progress p-0">
+                        <div id="unit_heal_point" class="progress-bar progress-bar-striped progress-bar-animated bg-danger p-0" role="progressbar" aria-label="Danger example" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                    </div>
+                </div>
+                <div id="unit_sprite" class="row sprite_block_info">
+                    <img id="unit_asset" alt='unit asset' class="mt-5 unit_image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+<button id="runWinModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropWin" hidden></button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdropWin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">You won!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Your reward
+
+
+        </div>
+        <div class="modal-footer">
+          <button id="close_page" type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Receive an award</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="runLoseModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropLose" hidden></button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdropLose" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">You Lose!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
