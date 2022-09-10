@@ -27,7 +27,43 @@
             "phisical_damage": 10,
             "class": "Human",
             "splash_url": "/assets/units_assets/rogue_unit.png"
-        }    
+        },
+        {
+            "uid": "unit_3",
+            "unit_level": 1,
+            "name": "Unit 4",
+            "heal_point": 200,
+            "phisical_damage": 10,
+            "class": "Human",
+            "splash_url": "/assets/units_assets/rogue_unit.png"
+        },
+        {
+            "uid": "unit_3",
+            "unit_level": 1,
+            "name": "Unit 5",
+            "heal_point": 200,
+            "phisical_damage": 10,
+            "class": "Human",
+            "splash_url": "/assets/units_assets/rogue_unit.png"
+        },
+        {
+            "uid": "unit_3",
+            "unit_level": 1,
+            "name": "Unit 6",
+            "heal_point": 200,
+            "phisical_damage": 10,
+            "class": "Human",
+            "splash_url": "/assets/units_assets/rogue_unit.png"
+        },
+        {
+            "uid": "unit_3",
+            "unit_level": 1,
+            "name": "Unit 7",
+            "heal_point": 200,
+            "phisical_damage": 10,
+            "class": "Human",
+            "splash_url": "/assets/units_assets/rogue_unit.png"
+        }
     ]
     
 }
