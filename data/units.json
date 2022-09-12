@@ -6,7 +6,9 @@
             "unit_level": 1,
             "name": "Black child crow",
             "heal_point": 50,
-            "phisical_damage": 7,
+            "physical_defence": 1,
+            "phisical_damage": 10,
+            "crit_chance": 1,
             "class": "Animal",
             "splash_url": "/assets/units_assets/crown_child_unit.png"
         },
@@ -15,7 +17,9 @@
             "unit_level": 1,
             "name": "Wolf child",
             "heal_point": 75,
-            "phisical_damage": 7,
+            "physical_defence": 5,
+            "phisical_damage": 20,
+            "crit_chance": 15,
             "class": "Animal",
             "splash_url": "/assets/units_assets/wolf_unit.png"
         },
@@ -23,47 +27,35 @@
             "uid": "unit_3",
             "unit_level": 1,
             "name": "Rogue of the forest",
-            "heal_point": 200,
-            "phisical_damage": 10,
+            "heal_point": 150,
+            "physical_defence": 3,
+            "phisical_damage": 30,
+            "crit_chance": 30,
             "class": "Human",
             "splash_url": "/assets/units_assets/rogue_unit.png"
         },
         {
-            "uid": "unit_3",
+            "uid": "unit_4",
             "unit_level": 1,
-            "name": "Unit 4",
-            "heal_point": 200,
-            "phisical_damage": 10,
-            "class": "Human",
-            "splash_url": "/assets/units_assets/rogue_unit.png"
-        },
+            "name": "Holy Deer",
+            "heal_point": 250,
+            "physical_defence": 25,
+            "phisical_damage": 30,
+            "crit_chance": 15,
+            "class": "Animal",
+            "splash_url": "/assets/units_assets/holy_deer_unit.png"
+        }   ,
         {
-            "uid": "unit_3",
+            "uid": "unit_5",
             "unit_level": 1,
-            "name": "Unit 5",
-            "heal_point": 200,
-            "phisical_damage": 10,
-            "class": "Human",
-            "splash_url": "/assets/units_assets/rogue_unit.png"
-        },
-        {
-            "uid": "unit_3",
-            "unit_level": 1,
-            "name": "Unit 6",
-            "heal_point": 200,
-            "phisical_damage": 10,
-            "class": "Human",
-            "splash_url": "/assets/units_assets/rogue_unit.png"
-        },
-        {
-            "uid": "unit_3",
-            "unit_level": 1,
-            "name": "Unit 7",
-            "heal_point": 200,
-            "phisical_damage": 10,
-            "class": "Human",
-            "splash_url": "/assets/units_assets/rogue_unit.png"
-        }
+            "name": "Big  Grizzly",
+            "heal_point": 400,
+            "physical_defence": 30,
+            "phisical_damage": 19,
+            "crit_chance": 5,
+            "class": "Animal",
+            "splash_url": "/assets/units_assets/grizzly_unit.png"
+        }     
     ]
     
 }

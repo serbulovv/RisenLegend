@@ -28,9 +28,8 @@ function call(id) {
 }
 
 function getUserData(){
-    // localStorage.setItem('user_data', '{"heal_point": 300, "user_name": "TestUser", "phisical_damage": 30, "class": "Human", "splash_url": ""}');
-    data = JSON.parse(localStorage.getItem('user_data'))
-    return data
+    data = JSON.parse(localStorage.getItem('data'))
+    return data['user_data']
 }
 
 function getFileData(id){
@@ -60,17 +59,45 @@ function start_fight(monster_size, user_data, unit_data, unit_heal_point_obj, us
     // setup user info
     let user_heal_point = user_data["heal_point"]
     let user_phisical_damage = user_data["phisical_damage"]
+    let user_physical_defence = user_data["physical_defence"]
+    let user_crit_chance = user_data["crit_chance"]
 
     // setup unit info
     let unit_heal_point = unit_data["heal_point"]
     let unit_phisical_damage = unit_data["phisical_damage"]
+    let unit_physical_defence = unit_data["physical_defence"]
+    let unit_crit_chance = unit_data["crit_chance"]
+
+    let damage_type = "attack"
 
     //check heal point
     let is_live = (hp) => hp > 0 ? true : false
 
+    let get_random_damage = (damage) => {
+        if(damage < 1) { return 1 }
+        max = damage + ((Math.abs(damage)*0.025)/0.1)
+        min = damage - ((Math.abs(damage)*0.025)/0.1)
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+ 
+    let calculate_defence = (damage, defence) => {
+        damage = get_random_damage(damage)
+        return Math.round(damage*(100/(100+defence)))
+    }
+
+    let calculate_crit = (crit, damage) => {
+        number = Math.floor(Math.random() * 200)
+        console.log(number)
+        if(crit >= number) { 
+            damage_type = "crit"
+            return damage * 2;
+        }
+        return 0;
+    }
+
     // generate damage
-    let user_damage = () => user_phisical_damage + 0
-    let unit_damage = () => unit_phisical_damage + 0
+    let user_damage = () => calculate_defence(user_phisical_damage, unit_physical_defence) + calculate_crit(user_crit_chance, user_phisical_damage) + 0
+    let unit_damage = () => calculate_defence(unit_phisical_damage, user_physical_defence) + calculate_crit(unit_crit_chance, unit_phisical_damage) + 0
 
     // add/remove animation effect
     let addShakingAnimationEffect = (obj, anim_type) => {
@@ -82,14 +109,18 @@ function start_fight(monster_size, user_data, unit_data, unit_heal_point_obj, us
 
     // make attack
     let attack_user = () => {
-        user_heal_point = user_heal_point - unit_damage();
-        showDamageOnUnit('user', unit_damage());
+        damage_type = "attack"
+        current_damage = unit_damage()
+        user_heal_point = user_heal_point - current_damage;
+        showDamageOnUnit('user', current_damage, damage_type);
         addShakingAnimationEffect(user_asset, "animated");
     }
 
     let attack_unit = () => {
-        unit_heal_point = unit_heal_point - user_damage();
-        showDamageOnUnit('unit', user_damage());
+        damage_type = "attack"
+        current_damage = user_damage()
+        unit_heal_point = unit_heal_point - current_damage;
+        showDamageOnUnit('unit', current_damage, damage_type);
         addShakingAnimationEffect(unit_asset, "animated_unit");
     }
 
@@ -104,16 +135,16 @@ function start_fight(monster_size, user_data, unit_data, unit_heal_point_obj, us
         setTimeout(function() {   
             attack_user();
             attack_unit();
-            setup_hp(user_heal_point_obj, find_percent(user_data["heal_point"], user_heal_point))
-            setup_hp(unit_heal_point_obj, find_percent(unit_data["heal_point"], unit_heal_point))
+            setup_hp(user_heal_point_obj, find_percent(user_data["heal_point"], user_heal_point), user_heal_point)
+            setup_hp(unit_heal_point_obj, find_percent(unit_data["heal_point"], unit_heal_point), unit_heal_point)
           if (is_live(user_heal_point) && is_live(unit_heal_point)) {
             fightLoop();
           } else if ((!is_live(unit_heal_point) && monster_count != monster_size)) {
                 if(monster_count != monster_size) {monster_count++;}
                 setTimeout(function() {
                     update_stats();
-                    setup_hp(user_heal_point_obj, find_percent(user_data["heal_point"], user_data["heal_point"]))
-                    setup_hp(unit_heal_point_obj, find_percent(unit_data["heal_point"], unit_data["heal_point"]))
+                    setup_hp(user_heal_point_obj, find_percent(user_data["heal_point"], user_data["heal_point"]), user_data["heal_point"])
+                    setup_hp(unit_heal_point_obj, find_percent(unit_data["heal_point"], unit_data["heal_point"]), unit_data["heal_point"])
                     setup_monster_count(unit_name, unit_data, monster_count)
                     fightLoop();
                 }, 200);
@@ -132,10 +163,10 @@ function find_percent(max_hp, hp){
  return (hp * 100) / max_hp
 }
 
-function setup_hp(obj, hp){
+function setup_hp(obj, hp, current_hp){
     obj.style = `width: ${hp}%`
-    if(hp < 0) { hp = 0}
-    obj.innerHTML = "" + Math.round(hp)
+    if(current_hp < 0) { current_hp = 0}
+    obj.innerHTML = "" + Math.round(current_hp)
 }
 
 function setup_monster_count(obj, unit_data, count) {
@@ -151,7 +182,9 @@ function runWinResult() {
 
 function runLoseResult() {
     fight_page.document.getElementById("runLoseModal").click();
-    
+    let btn = fight_page.document.getElementById('close_page_1')
+    btn.onclick = function() {fight_page.close()};
+    unBlockMainPage();
 }
 
 function showDamageOnUnit(scope, damage, damageType) {
@@ -174,7 +207,11 @@ function showDamageOnUnit(scope, damage, damageType) {
         let el = document.createElement('div');
         el.textContent = ''+damage;
         el.classList.add('slide_bottom')
-        el.style = "position: absolute; color: white; font-size: 25px;"
+        if(damageType == "crit"){
+            el.style = "position: absolute; color: yellow; font-size: 45px;"
+        } else {
+            el.style = "position: absolute; color: white; font-size: 25px;"
+        }
         el.style.top = rand_height(user_sprite) + "px";
         el.style.left = rand_width(user_sprite) + "px";
         user_sprite.appendChild(el);
@@ -189,7 +226,11 @@ function showDamageOnUnit(scope, damage, damageType) {
         let el = document.createElement('div');
         el.textContent = ''+damage;
         el.classList.add('slide_bottom')
-        el.style = "position: absolute; color: white; font-size: 25px;"
+        if(damageType == "crit"){
+            el.style = "position: absolute; color: yellow; font-size: 45px;"
+        } else {
+            el.style = "position: absolute; color: white; font-size: 25px;"
+        }
         el.style.top = rand_height(unit_sprite) + "px";
         el.style.left = rand_width(unit_sprite) + "px";
         unit_sprite.appendChild(el);
