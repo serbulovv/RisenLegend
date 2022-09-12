@@ -1,0 +1,20 @@
+html, body {
+    background: url("/assets/background_images/MainBackground.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Acme', sans-serif;
+}
+.image_div {
+    box-shadow: 25px 22px 51px -13px rgba(0, 0, 0, 0.75);
+    height: 175px;
+    background-color: #e89c55;
+    background-image: linear-gradient(146deg, #e89c55 0%, #492301 100%);
+}
+.block_menu {
+    max-width: 300px;
+}
+.image_size {
+    width: auto;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+}
