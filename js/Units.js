@@ -2,7 +2,8 @@ let HTMLUnitsList = document.getElementById("units_list")
 
 show_units_list()
 function show_units_list() {
-    let arr_units_id = new URL(location.href).searchParams.get("unitsIDs").split(',')
+    let encoded_arr_units_id = atob(location.search.split('?')[1])
+    let arr_units_id = new URL(location.origin + location.pathname + "?" + encoded_arr_units_id).searchParams.get("unitsIDs").split(',')
     let resUnitsList = ""
     for (let i = 0; i < arr_units_id.length; i++) {
         currentUnit = getFileData(arr_units_id[i] - 1)

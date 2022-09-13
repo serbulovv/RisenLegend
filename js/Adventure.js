@@ -24,5 +24,6 @@ function call() {
 }
 
 function show_units_page(units_id) {
-    window.open(`/html/UnitsPage.html?unitsIDs=${units_id}` , "_self")
+    let parameters = "unitsIDs=" + units_id
+    window.open(`/html/UnitsPage.html?${btoa(parameters)}`, "_self")
 }
