@@ -17,14 +17,16 @@
             <div class="col sing_in_box">
                 <h1 class="mb-1 display-2">Welcome here!</h1>
                 <p class="mb-5"><small>Enter your unique account key or create a new one :)</small></p>
-                <div class="input-group mb-3 ">
-                    <input type="text" class="form-control" placeholder="Account hash" aria-label="Account hash">
-                    <span class="input-group-text"> </span>
-                    <input type="password" class="form-control" placeholder="Password" aria-label="Password">
-                </div>
-                <div class="d-grid gap-2 col-6 mx-auto mt-4 public_shadow">
-                    <a class='btn btn-success' href="/html/MainPage.html">Play</a>
-                </div>
+                <form id="login">
+                    <div class="input-group mb-3 ">
+                        <input id="account_hash_input" type="text" class="form-control" placeholder="Account hash" aria-label="Account hash" required>
+                        <span class="input-group-text"> </span>
+                        <input id="password_input" type="password" class="form-control"  placeholder="Password" aria-label="Password" required>
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto mt-4 public_shadow">
+                        <input class="btn btn-success" type="submit" value="Play">
+                    </div>
+                </form>
                 <div class="divided_line"></div>
                 <div class="container">
                     <a class="a_reg" href="/html/RegistrationPage.html">
@@ -39,5 +41,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
+    <script src="/js/index.js" type="module"></script>
 </body>
 </html>

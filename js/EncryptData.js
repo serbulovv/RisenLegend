@@ -22,10 +22,5 @@ const decipher = salt => {
       .join('');
 }
 
-const myCipher = cipher(key)
-encrtyped = myCipher(temp)
-console.log(encrtyped)
-
-const myDecipher = decipher(key)
-decrypted = myDecipher(encrtyped)
-console.log(JSON.parse(decrypted))
+export const myCipher = cipher(key)
+export const myDecipher = decipher(key)
