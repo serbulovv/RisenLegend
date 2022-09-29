@@ -14,16 +14,18 @@ html, body {
 .image_div {
     box-shadow: 25px 22px 51px -13px rgba(0, 0, 0, 0.75);
     background-color: #b78200;
-    background-image: linear-gradient(180deg, #b78200 0%, #331d00 100%);
+    background-image: linear-gradient(180deg, #b78200 0%, #251500 100%);
     border-radius: 15px;
     height: 150px;
 }
 .image_div:hover {
     cursor: pointer;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);    
 }
 .image_size_menu {
-    width: 100px;
-    height: 100px;
+    margin: 7px;
+    width: 130px;
+    height: 130px;
 }
 .block_menu {
     max-width: 250px;

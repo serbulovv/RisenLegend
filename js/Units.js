@@ -1,5 +1,14 @@
 let HTMLUnitsList = document.getElementById("units_list")
 
+function getFileData(id){
+    var request = new XMLHttpRequest();
+    request.open("GET", "../../data/units.json", false)
+    request.send(null)
+    var file_json = JSON.parse(request.responseText)
+    let unit_global_data = file_json['unit_data'][id]
+    return unit_global_data
+}
+
 show_units_list()
 function show_units_list() {
     let encoded_arr_units_id = atob(location.search.split('?')[1])
@@ -12,13 +21,4 @@ function show_units_list() {
             currentUnit.splash_url + '"></div><input class="monster_button mt-3" type = "button" onclick = "call(' + (arr_units_id[i] - 1) +')" value = "Click Me"></div>'
     } 
     HTMLUnitsList.insertAdjacentHTML('afterbegin', resUnitsList)
-}
-
-function getFileData(id) {
-    var request = new XMLHttpRequest();
-    request.open("GET", "../../data/units.json", false)
-    request.send(null)
-    var file_json = JSON.parse(request.responseText)
-    let unit_global_data = file_json['unit_data'][id]
-    return unit_global_data
 }
