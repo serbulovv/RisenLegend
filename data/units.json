@@ -44,7 +44,7 @@
             "crit_chance": 15,
             "class": "Animal",
             "splash_url": "/assets/units_assets/holy_deer_unit.png"
-        }   ,
+        },
         {
             "uid": "unit_5",
             "unit_level": 1,
@@ -55,7 +55,40 @@
             "crit_chance": 5,
             "class": "Animal",
             "splash_url": "/assets/units_assets/grizzly_unit.png"
-        }     
+        },
+        {
+            "uid": "unit_6",
+            "unit_level": 2,
+            "name": "Leech",
+            "heal_point": 700,
+            "physical_defence": 10,
+            "phisical_damage": 20,
+            "crit_chance": 5,
+            "class": "Animal",
+            "splash_url": "/assets/units_assets/leech_unit.png"
+        },
+        {
+            "uid": "unit_7",
+            "unit_level": 2,
+            "name": "Swamp Snake",
+            "heal_point": 1100,
+            "physical_defence": 15,
+            "phisical_damage": 30,
+            "crit_chance": 15,
+            "class": "Animal",
+            "splash_url": "/assets/units_assets/swamp_snake_unit.png"
+        },
+        {
+            "uid": "unit_8",
+            "unit_level": 2,
+            "name": "Swamp Ent",
+            "heal_point": 2000,
+            "physical_defence": 20,
+            "phisical_damage": 8,
+            "crit_chance": 1,
+            "class": "Creature",
+            "splash_url": "/assets/units_assets/swamp_ent_unit.png"
+        }  
     ]
     
 }

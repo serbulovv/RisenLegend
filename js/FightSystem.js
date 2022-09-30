@@ -87,7 +87,6 @@ function start_fight(monster_size, user_data, unit_data, unit_heal_point_obj, us
 
     let calculate_crit = (crit, damage) => {
         number = Math.floor(Math.random() * 200)
-        console.log(number)
         if(crit >= number) { 
             damage_type = "crit"
             return damage * 2;
